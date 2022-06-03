@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('type')->nullable();
             $table->text('name_photo');
             $table->text('body')->nullable();
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }
