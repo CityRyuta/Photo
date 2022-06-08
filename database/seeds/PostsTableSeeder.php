@@ -16,11 +16,20 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('posts')->insert([
+        DB::table('posts')->insert([
                 'group' => 'levtech',
                 'name' => '太郎',
-                'type' => '2022.June-Ⅱ',
-                'name_photo' => 'Tシャツ',
+                'type' => '2022.June',
+                'name_photo' => 'milk',
         ]);
+        
+        DB::table('posts')->insert([
+                'group' => 'nogizaka46',
+                'name' => 'nanase',
+                'type' => '2022.June',
+                'name_photo' => 'milk',
+        ]);
+        
+        
     }
 }

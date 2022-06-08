@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function() {
-    return view('index');
-});
+Route::get('/', 'PostController@index');
+
+/*/posts/(対象データのID)*/
+Route::get('/posts/{post}', 'PostController@show');
 
 /*route/web.phpで/postsにGETリクエストが来たらPostControllerのindexメソッドを呼ぶ*/
 Route::get('/posts', 'PostController@index');

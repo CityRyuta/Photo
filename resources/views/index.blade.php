@@ -22,15 +22,31 @@
             <p class='type'>種類</p>
             <P class='name_photo'>写真名</P>
             <div class='posts'>
-                <div class='post'>
-                    <h2 class='title1'>title1</h2>
-                    <p class='body'>this is a sample body.</p>
-                </div>
+                @foreach ($posts as $post)
+                    <div class='post'>
+                        <a href="/posts/{{ $post->id }}">
+                            <p class='group'>{{ $post->group }}</p>
+                            <p class='name'>{{ $post->name }}</p>
+                            <p class='type'>{{ $post->type}}</p>
+                            <P class='name_photo'>{{ $post->name_photo}}</P>
+                            <p class='body'>{{ $post->body}}</p>
+                            <p class='photo'>{{ $post->photo}}</p>
+                        </a>
+                    </div>
+                @endforeach
             </div>    
+        </div>
+        
+        <div class='main_left'>
+            
         </div>
         
         <div class='footer'>
             
+        </div>
+        
+        <div class='paginate'>
+            {{ $posts->links() }}
         </div>
     </body>
 </html>
