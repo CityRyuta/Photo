@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request\PostRequest;
 
 class PostController extends Controller
 {
@@ -33,5 +33,23 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('show')->with(['post' => $post]);
+    }
+    
+    public function create()
+    {
+        return view('create');
+    }
+    
+    public function store(Request $request, PostRequest $post)
+    {
+        $input = $request['post'];
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
+    }
+    
+    public function delete(Post $post)
+    {
+    $post->delete();
+    return redirect('/');
     }
 }

@@ -9,7 +9,7 @@
     <body>
         <div class='header'>
             <hi>Photo</hi>
-            <p class='btm1'>Button1</p>
+            <p class='btm1'>[<a href='/create'>登録</a>]</p>
             <p class='btm2'>Button2</p>
             <p class='login'>login</p>
             <p class='menu'>menu</p>
