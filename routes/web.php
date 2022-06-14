@@ -13,6 +13,16 @@
 
 Route::get('/', 'PostController@index');
 
+/*投稿削除*/
+Route::delete('/posts/{post}', 'PostController@delete');
+
+Route::post('/posts', 'PostController@store');
+
+
+
+/*新規投稿*/
+Route::get('/create', 'PostController@create');
+
 /*/posts/(対象データのID)*/
 Route::get('/posts/{post}', 'PostController@show');
 
